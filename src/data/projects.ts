@@ -10,6 +10,7 @@ export interface Project {
   features: string[];
   tags: string[];
   image: string;
+  gallery?: string[];
   technologies: { name: string; icon?: string }[];
   githubUrl?: string;
   behanceUrl?: string;
@@ -39,7 +40,11 @@ export const projects: Project[] = [
       "Progress tracking and reporting dashboard"
     ],
     tags: ["Laravel", "React", "MySQL", "Pusher"],
-    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80",
+    image: "https://z-p3-scontent.fadd1-1.fna.fbcdn.net/v/t39.30808-6/615143667_846428998398171_4081574980917109962_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGSM3BwVtY5YkUiNeQR7BwmdSz6a_8pMaV1LPpr_ykxpWxaiJjXZZ-dR2UPd_YSDnbf2eMgfTvKdGswUVEf5dnV&_nc_ohc=DoTJuFiQuSoQ7kNvwH9BZVz&_nc_oc=Adr37EWK7YXfO0a1ZKcPI34k1Jx8i5MOTuu_TlIYFt4Jjw4OOgkUM2UezLH9T_2OW4Q&_nc_zt=23&_nc_ht=z-p3-scontent.fadd1-1.fna&_nc_gid=M__Jk-HrqiC36VJ9FNs4vg&_nc_ss=7a32e&oh=00_AfyU9MahXDr0d_f0DHOMMOp0WwECEdc1xN2AXDY2bnhk-Q&oe=69C5BD22",
+    gallery: [
+      "https://z-p3-scontent.fadd1-1.fna.fbcdn.net/v/t39.30808-6/612650097_842115082162896_1034184077146037671_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=106&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeEn9OhTxjp9yyqRakh8wY1-hWToZnRs8neFZOhmdGzyd48MNXowNlKKGuatiA2wNNOCoghYGJSZApUaEQC4sxbK&_nc_ohc=Jz0A9eCE5GIQ7kNvwGmVVwC&_nc_oc=Adq9CFgn7_9KncwZBgpqfoVwJynu7OO93jUUOtj4uJ7028_NAllWaka9VKJ3euRVYAI&_nc_zt=23&_nc_ht=z-p3-scontent.fadd1-1.fna&_nc_gid=N4O_ZedsDs8xzw_Xz7GRSA&_nc_ss=7a32e&oh=00_AfxXpZ75OkDcsBeh04nSt94W2bxwJg4FJtJJVd-i8fcp0w&oe=69C5BF0C",
+      "https://z-p3-scontent.fadd1-1.fna.fbcdn.net/v/t39.30808-6/612329204_842114938829577_4693685443602782239_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGEQczyoAqyfVCmiAsNYQ2Ld6CmEOavKI93oKYQ5q8oj-pBA5WcZL9Ct7D7NmioxjT3tkdCUz4WimKwcIdiJiLq&_nc_ohc=WtPquP8xpjcQ7kNvwGja2fD&_nc_oc=AdruP1xoJh06B8rKdN8Cc0dpYDyBKeTJ4lHW9YBuS8r8JHxBZZ7A5dEI-CLOTsqL-rQ&_nc_zt=23&_nc_ht=z-p3-scontent.fadd1-1.fna&_nc_gid=w3o6V5rTvypTI-Gd1CXWtw&_nc_ss=7a32e&oh=00_Afyhe1sc84G6LuQRcGOh7JoNejp48bhCmDFR6s9kaygH7Q&oe=69C5B24B"
+    ],
     technologies: [
       { name: "Laravel" },
       { name: "React" },
@@ -102,7 +107,7 @@ export const projects: Project[] = [
       "Payment integration"
     ],
     tags: ["Laravel", "PHP", "MySQL", "E-Commerce"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
     technologies: [
       { name: "Laravel" },
       { name: "PHP" },
@@ -133,7 +138,11 @@ export const projects: Project[] = [
       "Intuitive and user-friendly UI/UX"
     ],
     tags: ["MERN Stack", "React", "Node.js", "MongoDB"],
-    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&w=800&q=80",
+    image: "https://z-p3-scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/615473137_846428928398178_611170320175750994_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeGUC3sHXix3gwg2u8oaJJfCDi8VRiHkvCUOLxVGIeS8JVHftD1cz0IQ47US0Tq-16q4YA5mCbbop2SqbvBoT_LU&_nc_ohc=XThTgh7tVm0Q7kNvwGnfYxW&_nc_oc=Adq8TtjRA2rb8brxeRtExzAqi_0-XcjMC71vT5nl64XWTYzgDorz2Rg7Zc-Ws46C1oM&_nc_zt=23&_nc_ht=z-p3-scontent.fadd2-1.fna&_nc_gid=INFLSnaNgGkVYoVBjmvAHw&_nc_ss=7a32e&oh=00_AfyGsvD1tz87HBqhyezCtxIW7dPfhe-Ag8Hec9OLRVuDmw&oe=69C58DDF",
+    gallery: [
+      "https://z-p3-scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/615808255_846428918398179_5885885750110131847_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=104&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeFYtrU1wM9MD0GfSd_PrKNDtxmZqRQhqgi3GZmpFCGqCOW4O_rDf0Avk8O-TwyOPXZnqqf8vh6XFiMNkHuprY_k&_nc_ohc=aSxlf9a5_AcQ7kNvwGhr-UP&_nc_oc=AdqJ9_FHtQufEvTEOFJvsnZocvSILil_3OgMJGaxf8_AIYLQgX_DzLlNdM34DOlOst4&_nc_zt=23&_nc_ht=z-p3-scontent.fadd2-1.fna&_nc_gid=INFLSnaNgGkVYoVBjmvAHw&_nc_ss=7a32e&oh=00_AfwPLN8b38cd4AF8HznxtfUw_vzwSoZmNOpEKMZzojU3Jg&oe=69C5988D",
+      "https://z-p3-scontent.fadd1-1.fna.fbcdn.net/v/t39.30808-6/611263443_840441825663555_7889179707790170563_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=105&ccb=1-7&_nc_sid=13d280&_nc_eui2=AeFW-06fIbJcdLC5QvhTREEpwOyTJe4O95PA7JMl7g73k2aC0jqZRjwAjxYfI6AuQNNYwAqaRpWsjuxSFm3Te2uW&_nc_ohc=BSBnchVX5YcQ7kNvwF-I45z&_nc_oc=Adqv8WxXsCWitY5w7vGyMuI7gvo78H0_XHFZaQT5Z3vztA8ei2RkB5EGBQ5Up3w_Rz4&_nc_zt=23&_nc_ht=z-p3-scontent.fadd1-1.fna&_nc_gid=b5OdsxE9y63IBqH5CoxYxw&_nc_ss=7a32e&oh=00_Afyw1Phpw6ad7H-MBu0gehUZbCM-BWcFo6h9Qv3dIRB-cQ&oe=69C5B689"
+    ],
     technologies: [
       { name: "MongoDB" },
       { name: "Express.js" },

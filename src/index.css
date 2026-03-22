@@ -8,16 +8,70 @@
   --color-brand-primary: #050505;
   --color-brand-accent: #8b5cf6; /* Violet */
   --color-brand-secondary: #ec4899; /* Pink */
+  --color-brand-light-bg: #ffffff;
+  --color-brand-light-text: #0f172a;
 }
 
 @layer base {
   body {
-    @apply bg-brand-primary text-white antialiased selection:bg-brand-accent selection:text-white;
+    @apply bg-brand-primary text-white antialiased selection:bg-brand-accent selection:text-white transition-colors duration-300;
+  }
+
+  .light body {
+    @apply bg-brand-light-bg text-brand-light-text;
+  }
+
+  .light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+    @apply text-brand-light-text;
+  }
+
+  .light p {
+    @apply text-slate-600;
+  }
+
+  .light .text-white {
+    @apply text-brand-light-text;
+  }
+
+  .light .text-white\/90 {
+    @apply text-brand-light-text/90;
+  }
+
+  .light .text-gray-400 {
+    @apply text-slate-500;
+  }
+
+  .light .text-gray-500 {
+    @apply text-slate-400;
   }
 }
 
 .glass {
   @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
+
+.light .glass {
+  @apply bg-black/5 border-black/10;
+}
+
+.light .bg-brand-primary {
+  @apply bg-brand-light-bg;
+}
+
+.light .bg-white {
+  @apply bg-slate-100;
+}
+
+.light .bg-white\/5 {
+  @apply bg-slate-100;
+}
+
+.light .border-white\/5 {
+  @apply border-slate-200;
+}
+
+.light .border-white\/10 {
+  @apply border-slate-200;
 }
 
 .text-gradient {
@@ -26,4 +80,19 @@
 
 .bg-gradient-brand {
   @apply bg-gradient-to-br from-brand-accent/20 to-brand-secondary/20;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
 }

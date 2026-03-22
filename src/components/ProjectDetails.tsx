@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, CheckCircle2, Layout, Server, Database, Code2, Sparkles, ExternalLink, Github } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Layout, Server, Database, Code2, Sparkles, ExternalLink, Github, Globe } from 'lucide-react';
 import { projects } from '../data/projects';
 
 const ProjectDetails: React.FC = () => {
@@ -71,7 +71,7 @@ const ProjectDetails: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
-            className="relative rounded-3xl overflow-hidden aspect-[21/9] shadow-2xl shadow-brand-primary/10"
+            className="relative rounded-3xl overflow-hidden aspect-[21/9] shadow-2xl shadow-brand-primary/10 mb-8"
           >
             <img 
               src={project.image} 
@@ -80,6 +80,28 @@ const ProjectDetails: React.FC = () => {
               referrerPolicy="no-referrer"
             />
           </motion.div>
+
+          {project.gallery && project.gallery.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {project.gallery.map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * idx }}
+                  className="relative rounded-3xl overflow-hidden aspect-video shadow-xl shadow-brand-primary/5"
+                >
+                  <img 
+                    src={img} 
+                    alt={`${project.title} gallery ${idx + 1}`} 
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -200,10 +222,11 @@ const ProjectDetails: React.FC = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      title={project.liveUrl}
                       className="w-full bg-white text-brand-primary py-4 rounded-xl font-bold hover:bg-brand-accent hover:text-white transition-all flex items-center justify-center gap-2"
                     >
-                      View Live Site
-                      <ExternalLink className="w-4 h-4" />
+                      <Globe className="w-4 h-4" />
+                      Live Preview
                     </a>
                   )}
                   {project.behanceUrl && (
@@ -211,10 +234,11 @@ const ProjectDetails: React.FC = () => {
                       href={project.behanceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      title={project.behanceUrl}
                       className="w-full bg-[#1769ff] text-white py-4 rounded-xl font-bold hover:bg-[#0056f7] transition-all flex items-center justify-center gap-2"
                     >
-                      View on Behance
                       <ExternalLink className="w-4 h-4" />
+                      Behance Showcase
                     </a>
                   )}
                   {project.githubUrl && (
@@ -222,10 +246,11 @@ const ProjectDetails: React.FC = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      title={project.githubUrl}
                       className="w-full bg-white/10 text-white py-4 rounded-xl font-bold hover:bg-white/20 transition-all flex items-center justify-center gap-2 border border-white/20"
                     >
-                      GitHub Repo
                       <Github className="w-4 h-4" />
+                      Source Code
                     </a>
                   )}
                 </div>
